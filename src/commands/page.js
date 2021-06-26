@@ -15,7 +15,7 @@ module.exports = {
 
     const package = await filesystem.read('package.json', 'json')
     const isReactNative = !!package.dependencies['react-native']
-    const isTypescript = !!package.dependencies['typescript']
+    const isTypescript = !!package.dependencies['typescript'] || !!package.devDependencies['typescript']
 
     const styleTemplate = isReactNative ? 'styles-rn.js.ejs' : 'styles-react.js.ejs'
 
