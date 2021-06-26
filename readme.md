@@ -1,25 +1,12 @@
 # zionix CLI
 
-A CLI for zionix.
-
-## Customizing your CLI
-
-Check out the documentation at https://github.com/infinitered/gluegun/tree/master/docs.
-
-## Publishing to NPM
-
-To package your CLI up for NPM, do this:
+Esta CLI foi criada com o objetivo de facilitar as tarefas repetitivas do dia a a dia durante os processos de desenvolvimento com React
 
 ```shell
-$ npm login
-$ npm whoami
-$ npm lint
-$ npm test
-(if typescript, run `npm run build` here)
-$ npm publish
+$ zionix create:component {NAME} (Cria um componente padrão React)
+$ zionix create:page {NAME} (Cria uma página padrão React)
 ```
 
 # License
 
 MIT - see LICENSE
-

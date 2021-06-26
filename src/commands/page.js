@@ -1,9 +1,9 @@
 const capitalize = require('../utils/capitalize')
 
 module.exports = {
-  name: 'create:component',
-  alias: ['comp'],
-  description: 'Cria um componente padrão React',
+  name: 'create:page',
+  alias: ['page'],
+  description: 'Cria uma págnina padrão React',
   run: async toolbox => {
     const { parameters, template, filesystem, print: { success, error } } = toolbox
     const name = capitalize(parameters.first)
@@ -21,15 +21,15 @@ module.exports = {
 
     await template.generate({
       template: 'component.js.ejs',
-      target: `src/components/${name}/index.${isTypescript ? 'tsx' : 'js'}`,
+      target: `src/pages/${name}/index.${isTypescript ? 'tsx' : 'js'}`,
       props: { name }
     })
 
     await template.generate({
       template: styleTemplate,
-      target: `src/components/${name}/styles.${isTypescript ? 'tsx' : 'js'}`
+      target: `src/pages/${name}/styles.${isTypescript ? 'tsx' : 'js'}`
     })
 
-    toolbox.print.success(`src/components/${name} gerado com sucesso!`)
+    toolbox.print.success(`src/pages/${name} gerado com sucesso!`)
   }
 }
