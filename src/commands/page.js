@@ -1,4 +1,5 @@
 const capitalize = require('../utils/capitalize')
+const dirExists = require('../utils/dirExists')
 
 module.exports = {
   name: 'create:page',
@@ -18,18 +19,19 @@ module.exports = {
     const isTypescript = !!package.dependencies['typescript'] || !!package.devDependencies['typescript']
 
     const styleTemplate = isReactNative ? 'styles-rn.js.ejs' : 'styles-react.js.ejs'
+    const folder = dirExists('src') ? 'src/' : ''
 
     await template.generate({
       template: 'component.js.ejs',
-      target: `src/pages/${name}/index.${isTypescript ? 'tsx' : 'js'}`,
+      target: `${folder}pages/${name}/${name}.${isTypescript ? 'tsx' : 'js'}`,
       props: { name }
     })
 
     await template.generate({
       template: styleTemplate,
-      target: `src/pages/${name}/styles.${isTypescript ? 'tsx' : 'js'}`
+      target: `${folder}pages/${name}/styles.${isTypescript ? 'tsx' : 'js'}`
     })
 
-    toolbox.print.success(`src/pages/${name} gerado com sucesso!`)
+    success(`${folder}pages/${name} gerado com sucesso!`)
   }
 }

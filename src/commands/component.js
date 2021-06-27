@@ -1,4 +1,5 @@
 const capitalize = require('../utils/capitalize')
+const dirExists = require('../utils/dirExists')
 
 module.exports = {
   name: 'create:component',
@@ -19,17 +20,19 @@ module.exports = {
 
     const styleTemplate = isReactNative ? 'styles-rn.js.ejs' : 'styles-react.js.ejs'
 
+    const folder = dirExists('src') ? 'src/' : ''
+
     await template.generate({
       template: 'component.js.ejs',
-      target: `src/components/${name}/index.${isTypescript ? 'tsx' : 'js'}`,
+      target: `${folder}components/${name}/${name}.${isTypescript ? 'tsx' : 'js'}`,
       props: { name }
     })
 
     await template.generate({
       template: styleTemplate,
-      target: `src/components/${name}/styles.${isTypescript ? 'ts' : 'js'}`
+      target: `${folder}components/${name}/styles.${isTypescript ? 'ts' : 'js'}`
     })
 
-    toolbox.print.success(`src/components/${name} gerado com sucesso!`)
+    success(`${folder}components/${name} gerado com sucesso!`)
   }
 }
