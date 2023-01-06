@@ -1,10 +1,11 @@
-# zionix CLI
+# ZIONIX CLI
 
-Esta CLI foi criada com o objetivo de facilitar as tarefas repetitivas do dia a a dia durante os processos de desenvolvimento com React
+This CLI was created with the aim of facilitating repetitive day-to-day tasks during development processes with React
 
 ```shell
-$ zionix create:component {NAME} (Cria um componente padrão React)
-$ zionix create:page {NAME} (Cria uma página padrão React)
+$ zionix create:component {NAME} (create a react component)
+$ zionix c {NAME} (shortcut for creating react component)
+$ zionix create:page {NAME} (create a react page)
 ```
 
 # License

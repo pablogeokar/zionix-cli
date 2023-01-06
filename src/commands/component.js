@@ -59,6 +59,6 @@ module.exports = {
         : `${folder}components/${name}/${name}.module.css`
     })
 
-    success(`${folder}components/${name} gerado com sucesso!`)
+    success(`${folder}components/${name} successfully created!`)
   }
 }

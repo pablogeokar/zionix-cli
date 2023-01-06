@@ -4,13 +4,13 @@ const dirExists = require('../utils/dirExists')
 module.exports = {
   name: 'create:page',
   alias: ['page'],
-  description: 'Cria uma págnina padrão React',
+  description: 'Create a react page',
   run: async toolbox => {
     const { parameters, template, filesystem, print: { success, error } } = toolbox
     const name = capitalize(parameters.first)
 
     if (!parameters.first) {
-      error('O nome do componente não foi especificado')
+      error('specify a name for the component')
       return
     }
 
@@ -32,6 +32,6 @@ module.exports = {
       target: `${folder}pages/${name}/styles.${isTypescript ? 'tsx' : 'js'}`
     })
 
-    success(`${folder}pages/${name} gerado com sucesso!`)
+    success(`${folder}pages/${name} successfully created!`)
   }
 }
