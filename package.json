@@ -1,9 +1,12 @@
 {
-  "name": "zionix",
+  "name": "@zionix/cli",
   "version": "0.1.0",
   "description": "zionix CLI",
   "bin": {
     "zionix": "bin/zionix"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "format": "prettier --write **/*.{js,json} && standard --fix",

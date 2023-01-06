@@ -18,7 +18,7 @@ module.exports = {
     const isReactNative = !!package.dependencies['react-native']
     const isTypescript = !!package.dependencies['typescript'] || !!package.devDependencies['typescript']
 
-    const styleTemplate = isReactNative ? 'styles-rn.js.ejs' : 'styles-react.js.ejs'
+    const styleTemplate = isReactNative ? 'styled-rn.js.ejs' : 'styled-react.js.ejs'
     const folder = dirExists('src') ? 'src/' : ''
 
     await template.generate({
