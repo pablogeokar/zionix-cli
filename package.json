@@ -1,7 +1,7 @@
 {
   "name": "@zionix/cli",
-  "version": "0.1.0",
-  "description": "zionix CLI",
+  "version": "0.1.2",
+  "description": "This cli was created with the aim of facilitating repetitive day-to-day tasks during development processes with React.",
   "bin": {
     "zionix": "bin/zionix"
   },
